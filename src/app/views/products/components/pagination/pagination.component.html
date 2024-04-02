@@ -1,0 +1,32 @@
+<div class="flex justify-between items-center my-10">
+          <span class="font-medium text-gray-500">
+            {{ total }} resultados
+          </span>
+    <div class="flex items-center gap-2">
+        <custom-button title="Anterior" (onClick)="onPrevPage()" [disabled]="this.currentPage <= 1">
+            <svg class="w-5 h-5 text-[#051B54]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                 height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m15 19-7-7 7-7"/>
+            </svg>
+
+        </custom-button>
+        <span class="text-sm">Page {{ currentPage }}</span>
+        <custom-button title="Siguiente" (onClick)="onNextPage()"
+                       [disabled]="this.currentPage >= this.totalPages">
+            <svg class="w-5 h-5 text-[#051B54]" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m9 5 7 7-7 7"/>
+            </svg>
+        </custom-button>
+    </div>
+    <select (change)="onChangeLimit()" [formControl]="limitFormControl" class="cursor-pointer min-w-[50px] text-center bg-[#051B54]/5 hover:bg-[#051B54]/10 border border-[#051B54]/20 rounded-md p-1.5
+                    focus:ring-1 focus:ring-[#051B54]/50 outline-none"
+            name="records_per_page" id="cars">
+        <option [value]="5" selected>5</option>
+        <option [value]="10">10</option>
+        <option [value]="20">20</option>
+    </select>
+
+</div>

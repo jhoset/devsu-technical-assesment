@@ -1,0 +1,41 @@
+<div class="relative" (clickOutside)="onClose()">
+    <button (click)="onToggleMenu($event)"
+            class="p-2 rounded-full hover:bg-[#E5E7EB]  hover:text-[#3A3A3E] focus:text-[#3A3A3E]
+        focus:ring-1 focus:ring-[#CBD0D6] transition-all duration-150 ease-in-out outline-none" title="Acciones">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-three-dots-vertical"
+             viewBox="0 0 16 16">
+            <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+        </svg>
+    </button>
+    <div *ngIf="isMenuOpen"
+         class="bg-white shadow-md p-4 absolute top-1/2 left-0 border-[1px] border-[#E5E7EB]
+       -translate-x-[105%] -translate-y-1/2 rounded-md">
+        <ul class="grid gap-[0.5rem]">
+            <li>
+                <button (click)="onEdit($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-[#051B54]/5
+                                focus:ring-1 focus:ring-[#051B54]/50 transition-all duration-150 ease-in-out outline-none">
+                    <svg class="w-5 h-5 text-[#051B54]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                         height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10.779 17.779 4.36 19.918 6.5 13.5m4.279 4.279 8.364-8.643a3.027 3.027 0 0 0-2.14-5.165 3.03 3.03 0 0 0-2.14.886L6.5 13.5m4.279 4.279L6.499 13.5m2.14 2.14 6.213-6.504M12.75 7.04 17 11.28"/>
+                    </svg>
+
+                    Editar
+                </button>
+            </li>
+            <li>
+                <button (click)="onDelete($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-red-600/5
+                                focus:ring-1 focus:ring-red-600/50 transition-all duration-150 ease-in-out outline-none">
+                    <svg class="w-5 h-5 text-red-600" aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                    </svg>
+                    Eliminar
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<button
+        class="text-gray-900 bg-gray-100  focus:ring-4 focus:outline-none
+               focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-1.5 text-center
+               inline-flex items-center h-[36px] disabled:opacity-50 border border-[#051B54]/20
+               transition-all duration-150 ease-in-out"
+
+        [ngClass]="{ 'hover:bg-gray-200': !disabled }"
+        [disabled]="disabled"
+        [title]="disabled ? '' : title"
+        (click)="onClick.emit()"
+>
+    <ng-content></ng-content>
+</button>

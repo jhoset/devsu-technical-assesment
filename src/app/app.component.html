@@ -1,10 +1,9 @@
+<div clickDetector>
+  <app-navbar></app-navbar>
+  <main class="h-[calc(100vh-90px)] overflow-y-auto p-4 lg:p-8">
+    <section class="max-w-[1024px] mx-auto">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
 
-<app-navbar></app-navbar>
-<h1 class="text-red-400 text-3xl"> Bank </h1>
-<ul>
-  <li> <a routerLink="/products" > Products </a> </li>
-  <li> <a routerLink="/products/add" > Add </a> </li>
-  <li> <a routerLink="/products/edit" > Edit </a> </li>
-</ul>
-<hr>
-<router-outlet></router-outlet>
