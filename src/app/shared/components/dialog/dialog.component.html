@@ -1,0 +1,30 @@
+<article
+  class="fixed z-[100] h-[100vh] w-[100vw] bg-black bg-opacity-50  flex justify-center items-start pt-[40%] md:pt-[30%]">
+  <section class="w-[300px] md:w-[400px] h-[300px] shadow-md bg-white rounded-lg p-6 flex flex-col justify-between">
+    <!-- HEADER -->
+    <header>
+      <h2 class="text-2xl font-medium text-center text-[#051B54]"> {{ title }} </h2>
+      <hr class="my-2">
+    </header>
+    <!-- BODY -->
+    <main class="text-center">
+      {{ body }}
+    </main>
+    <!-- ACTIONS -->
+    <footer>
+      <hr class="my-2">
+      <div class="flex justify-center gap-4 md:gap-8 py-4">
+        <custom-button (onClick)="onCancel()">
+          <span class="px-4">Cancelar</span>
+        </custom-button>
+        <custom-button (onClick)="onConfirm()"
+                       [customClass]="' bg-[#F5DF66] hover:bg-[#ECCD23] focus:ring-[#ECCD23]/50'">
+          <div class="flex items-center gap-2 px-4">
+            <span> Confirmar </span>
+          </div>
+        </custom-button>
+      </div>
+    </footer>
+
+  </section>
+</article>

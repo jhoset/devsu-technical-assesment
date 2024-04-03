@@ -15,7 +15,7 @@ export interface ToastData {
 @Injectable({
     providedIn: 'root'
 })
-export class CustomToastService {
+export class ToastService {
     public data!: ToastData;
     public open$: Subject<ToastData> = new Subject<ToastData>()
 

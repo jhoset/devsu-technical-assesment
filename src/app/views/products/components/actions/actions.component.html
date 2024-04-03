@@ -12,8 +12,8 @@
     <div *ngIf="isMenuOpen"
          class="bg-white shadow-md p-4 absolute top-1/2 left-0 border-[1px] border-[#E5E7EB]
        -translate-x-[105%] -translate-y-1/2 rounded-md">
-        <ul class="grid gap-[0.5rem]">
-            <li>
+        <ul role="menu" class="grid gap-[0.5rem]">
+            <li role="menuitem">
                 <button (click)="onClickEdit($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-[#051B54]/5
                                 focus:ring-1 focus:ring-[#051B54]/50 transition-all duration-150 ease-in-out outline-none">
                     <svg class="w-5 h-5 text-[#051B54]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -25,7 +25,7 @@
                     Editar
                 </button>
             </li>
-            <li>
+            <li role="menuitem">
                 <button (click)="onClickDelete($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-red-600/5
                                 focus:ring-1 focus:ring-red-600/50 transition-all duration-150 ease-in-out outline-none">
                     <svg class="w-5 h-5 text-red-600" aria-hidden="true"

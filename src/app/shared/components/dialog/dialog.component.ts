@@ -1,0 +1,38 @@
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DialogService} from "../../services/dialog.service";
+import {Subscription} from "rxjs";
+
+@Component({
+  selector: 'app-dialog',
+  templateUrl: './dialog.component.html'
+})
+export class DialogComponent implements OnDestroy, OnInit {
+  public title: string = '';
+  public body: string = '';
+  public subscription!: Subscription
+
+  constructor(private _dialogService: DialogService) {
+  }
+
+  ngOnInit() {
+    this.subscription = this._dialogService.display$.subscribe(data => {
+      this.title = data.title || '';
+      this.body = data.body || '';
+
+    })
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  onCancel() {
+    this._dialogService.showDialog = false;
+    this._dialogService.dialogResponse$.next('cancel');
+  }
+
+  onConfirm() {
+    this._dialogService.showDialog = false;
+    this._dialogService.dialogResponse$.next('ok');
+  }
+}
