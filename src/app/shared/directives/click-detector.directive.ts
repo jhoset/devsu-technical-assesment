@@ -12,7 +12,6 @@ export class ClickDetectorDirective {
 
     @HostListener('document:click', ['$event.target'])
     public onClick(targetElement: HTMLElement) {
-        console.log('Sending through service')
         this._domEventsHandlerService.elementClicked$.next(targetElement);
     }
 }

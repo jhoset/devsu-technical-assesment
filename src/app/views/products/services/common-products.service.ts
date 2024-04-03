@@ -54,8 +54,6 @@ export class CommonProductsService {
     const releaseDate = new Date(year, month - 1, day);
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
-    console.log('releaseDate', releaseDate)
-    console.log('current', currentDate)
     return releaseDate.getTime() >= currentDate.getTime() ? null : {invalidDate: true};
   }
 
@@ -66,7 +64,6 @@ export class CommonProductsService {
       const releaseDate = new Date(+year + 1, month - 1, day);
       const [year2, month2, day2] = control.value.split('-')
       const revisionDate = new Date(year2, month2 - 1, day2);
-      console.log('release', releaseDate, 'revision', revisionDate)
       return revisionDate.getTime() >= releaseDate.getTime() ? null : {invalidDate: true};
     };
   }
