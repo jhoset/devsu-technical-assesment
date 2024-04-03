@@ -9,6 +9,7 @@ import {LoadingComponent} from './components/loading/loading.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SearchComponent } from './components/search/search.component';
+import {CommonProductsService} from "./services/common-products.service";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SearchComponent } from './components/search/search.component';
     ProductsRoutingModule,
     SharedModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [CommonProductsService]
 })
 export class ProductsModule {
 }

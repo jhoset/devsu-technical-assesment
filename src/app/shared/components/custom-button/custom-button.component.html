@@ -1,10 +1,13 @@
 <button
-        class="text-gray-900 bg-gray-100  focus:ring-4 focus:outline-none
+        class="text-gray-900 focus:ring-2 focus:outline-none
                focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-1.5 text-center
-               inline-flex items-center h-[36px] disabled:opacity-50 border border-[#051B54]/20
-               transition-all duration-150 ease-in-out"
+               inline-flex items-center h-[42px] disabled:opacity-50 border border-[#051B54]/20
+               transition-all duration-150 ease-in-out outline-none"
 
-        [ngClass]="{ 'hover:bg-gray-200': !disabled }"
+        [ngClass]="[
+            !disabled ? 'hover:bg-none': '',
+            customClass.length ? customClass: 'bg-gray-100 focus:ring-gray-100 hover:bg-gray-200'
+        ]"
         [disabled]="disabled"
         [title]="disabled ? '' : title"
         (click)="onClick.emit()"

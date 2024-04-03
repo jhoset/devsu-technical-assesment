@@ -5,6 +5,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     templateUrl: './custom-button.component.html'
 })
 export class CustomButtonComponent {
+    @Input() customClass: string = ''
     @Input() disabled: boolean = false;
     @Input() title: string = ''
     @Output() onClick: EventEmitter<void> = new EventEmitter<void>();

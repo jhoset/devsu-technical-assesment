@@ -5,6 +5,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { ClickDetectorDirective } from './directives/click-detector.directive';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 import { ImgFallbackDirective } from './directives/img-fallback.directive';
+import { ToastComponent } from './components/toast/toast.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ImgFallbackDirective } from './directives/img-fallback.directive';
     ClickDetectorDirective,
     CustomButtonComponent,
     ImgFallbackDirective,
+    ToastComponent,
   ],
   exports: [
     NavbarComponent,
@@ -21,6 +23,7 @@ import { ImgFallbackDirective } from './directives/img-fallback.directive';
     ClickDetectorDirective,
     CustomButtonComponent,
     ImgFallbackDirective,
+    ToastComponent,
   ],
   imports: [
     CommonModule

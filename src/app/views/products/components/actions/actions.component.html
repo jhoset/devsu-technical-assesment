@@ -14,7 +14,7 @@
        -translate-x-[105%] -translate-y-1/2 rounded-md">
         <ul class="grid gap-[0.5rem]">
             <li>
-                <button (click)="onEdit($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-[#051B54]/5
+                <button (click)="onClickEdit($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-[#051B54]/5
                                 focus:ring-1 focus:ring-[#051B54]/50 transition-all duration-150 ease-in-out outline-none">
                     <svg class="w-5 h-5 text-[#051B54]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                          height="24" fill="none" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@
                 </button>
             </li>
             <li>
-                <button (click)="onDelete($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-red-600/5
+                <button (click)="onClickDelete($event)" class="flex px-4 py-2 items-center gap-2 w-full rounded-md hover:bg-red-600/5
                                 focus:ring-1 focus:ring-red-600/50 transition-all duration-150 ease-in-out outline-none">
                     <svg class="w-5 h-5 text-red-600" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

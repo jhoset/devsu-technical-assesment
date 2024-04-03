@@ -1,28 +1,34 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output} from '@angular/core';
+
 @Component({
-  selector: 'app-actions',
-  templateUrl: './actions.component.html',
+    selector: 'app-actions',
+    templateUrl: './actions.component.html',
 })
 export class ActionsComponent {
 
-  constructor(private elementRef: ElementRef) {
-  }
+    @Output() onEdit: EventEmitter<void> = new EventEmitter<void>()
+    @Output() onDelete: EventEmitter<void> = new EventEmitter<void>()
 
-  public isMenuOpen: boolean = false
+    constructor(private elementRef: ElementRef) {
+    }
 
-  public onClose() {
-    this.isMenuOpen = false;
-  }
-  public onToggleMenu(event: Event) {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+    public isMenuOpen: boolean = false
 
-  public onEdit(event: Event) {
+    public onClose() {
+        this.isMenuOpen = false;
+    }
 
-  }
-  public onDelete(event: Event) {
+    public onToggleMenu(event: Event) {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
 
-  }
+    public onClickEdit(event: Event) {
+        this.onEdit.emit()
+    }
+
+    public onClickDelete(event: Event) {
+        this.onDelete.emit()
+    }
 
 
 }

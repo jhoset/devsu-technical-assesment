@@ -1,9 +1,21 @@
 <div class="flex flex-col h-full gap-4">
     <!--  SEARCH  -->
-    <div class="mt-2">
-        <app-search (onSearch)="onSearch($event)"></app-search>
+    <div class="mt-2 flex justify-between gap-4">
+        <div class="w-full">
+            <app-search (onSearch)="onSearch($event)"></app-search>
+        </div>
+        <custom-button (onClick)="goToAddProduct()" [customClass]="'bg-[#F5DF66] hover:bg-[#ECCD23] focus:ring-[#ECCD23]/50'">
+            <div class="flex items-center gap-2 px-2">
+                <svg class="w-5 h-5 text-gray-800/80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                     height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                <span> Agregar </span>
+            </div>
+        </custom-button>
     </div>
-    <div class="bg-[#FFFFFF]  h-[calc(100vh-200px)]  md:h-[calc(100vh-300px)] p-6 rounded-lg shadow-md overflow-x-auto flex flex-col justify-between">
+    <div class="bg-[#FFFFFF] h-[calc(100vh-200px)]  md:h-[calc(100vh-300px)] p-6 rounded-lg shadow-md overflow-x-auto flex flex-col justify-between">
         <!-- TABLE -->
         <div class="relative max-h-[80%] h-full overflow-x-auto sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -26,7 +38,9 @@
                         <td class="px-6 py-4"> {{ item.date_release | date:'dd/MM/yyyy' }} </td>
                         <td class="px-6 py-4"> {{ item.date_revision | date:'dd/MM/yyyy' }} </td>
                         <td class="px-6 py-4">
-                            <app-actions></app-actions>
+                            <app-actions (onEdit)="goToEditProduct(item)"
+                                         (onDelete)="onDeleteProduct(item)">
+                            </app-actions>
                         </td>
                     </tr>
                 </ng-container>

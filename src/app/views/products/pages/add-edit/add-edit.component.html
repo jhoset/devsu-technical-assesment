@@ -1,1 +1,103 @@
-<p>add-edit-product works!</p>
+<div class="mt-2">
+    <div class="bg-[#FFFFFF] h-[calc(100vh-200px)] overflow-y-auto  md:h-[calc(100vh-300px)] p-6 rounded-lg shadow-md">
+        <h1 class="text-3xl text-center font-medium text-[#051B54]"> Formulario de Registro </h1>
+        <hr class="my-6">
+        <div class="grid md:grid-cols-2 md:px-12 gap-x-8 gap-y-6">
+            <div>
+                <label for="id" class="font-medium after:content-['*'] after:text-red-600"> ID </label>
+                <input [formControl]="_commonProductsService.idControl"
+                       minlength="3"
+                       placeholder="Example: 123"
+                       maxlength="10"
+                       [ngClass]="{ 'is-invalid': submitted && _commonProductsService.idControl.errors }"
+                       class="custom-input"
+                       type="text" id="id">
+                <div *ngIf="submitted && _commonProductsService.idControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.idControl.errors['required']">ID es requerido.</div>
+                    <div *ngIf="_commonProductsService.idControl.errors['minlength']">ID es invalido, debe contener por lo menos 3 caracteres.</div>
+                    <div *ngIf="_commonProductsService.idControl.errors['maxlength']">ID es invalido, debe contener como maximo 10 caracteres.</div>
+                    <div *ngIf="_commonProductsService.idControl.errors['existingID']">ID es invalido, porfavor ingrese un ID diferente.</div>
+                </div>
+            </div>
+            <div>
+                <label for="name" class="font-medium after:content-['*'] after:text-red-600"> Nombre </label>
+                <input [formControl]="_commonProductsService.nameControl"
+                       placeholder="Example: Visa Credit Card"
+                       [ngClass]="{ 'is-invalid': submitted && _commonProductsService.nameControl.errors }"
+                       class="custom-input"
+                       type="text" id="name">
+                <div *ngIf="submitted && _commonProductsService.nameControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.nameControl.errors['required']">Nombre es requerido.</div>
+                    <div *ngIf="_commonProductsService.nameControl.errors['minlength']">Nombre es invalido, debe contener por lo menos 5 caracteres.</div>
+                    <div *ngIf="_commonProductsService.nameControl.errors['maxlength']">Nombre es invalido, debe contener como maximo 100 caracteres.</div>
+                </div>
+            </div>
+            <div>
+                <label for="description" class="font-medium after:content-['*'] after:text-red-600">
+                    Descripción: </label>
+                <textarea style="resize: none" [formControl]="_commonProductsService.descriptionControl"
+                          class="custom-input"
+                          [ngClass]="{ 'is-invalid': submitted && _commonProductsService.descriptionControl.errors }"
+                          type="text" id="description"></textarea>
+                <div *ngIf="submitted && _commonProductsService.descriptionControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.descriptionControl.errors['required']">Descripción es requerido.</div>
+                    <div *ngIf="_commonProductsService.descriptionControl.errors['minlength']">Descripción es invalido, debe contener por lo menos 10 caracteres.</div>
+                    <div *ngIf="_commonProductsService.descriptionControl.errors['maxlength']">Descripción es invalido, debe contener como maximo 200 caracteres.</div>
+                </div>
+            </div>
+            <div>
+                <label for="logo" class="font-medium after:content-['*'] after:text-red-600"> Logo </label>
+                <input [formControl]="_commonProductsService.logoControl"
+                       placeholder="https://www.example.com/logo-visa.jpg"
+                       class="custom-input"
+                       [ngClass]="{ 'is-invalid': submitted && _commonProductsService.logoControl.errors }"
+                       type="text" id="logo">
+                <div *ngIf="submitted && _commonProductsService.logoControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.logoControl.errors['required']">Logo(URL) es requerido.</div>
+                </div>
+            </div>
+            <div>
+                <label for="release_date" class="font-medium after:content-['*'] after:text-red-600"> Fecha de
+                    Liberación </label>
+                <input [formControl]="_commonProductsService.dateReleaseControl"
+                       [min]="minReleaseDate | date:'yyyy-MM-dd'"
+                       class="custom-input"
+                       [ngClass]="{ 'is-invalid': submitted && _commonProductsService.dateReleaseControl.errors }"
+                       (change)="onChangeReleaseDate()"
+                       type="date" id="release_date">
+                <div *ngIf="submitted && _commonProductsService.dateReleaseControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.dateReleaseControl.errors['required']">Fecha de Liberación es requerido.</div>
+                    <div *ngIf="_commonProductsService.dateReleaseControl.errors['invalidDate']">
+                        Fecha de Liberación es invalida
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="revision_date" class="font-medium after:content-['*'] after:text-red-600"> Fecha de
+                    Revisión </label>
+                <input [formControl]="_commonProductsService.dateRevisionControl"
+                       [min]="minRevisionDate | date:'yyyy-MM-dd'"
+                       class="custom-input"
+                       [ngClass]="{ 'is-invalid': submitted && _commonProductsService.dateRevisionControl.errors }"
+                       type="date" id="revision_date">
+                <div *ngIf="submitted && _commonProductsService.dateRevisionControl.errors" class="text-red-600">
+                    <div *ngIf="_commonProductsService.dateRevisionControl.errors['required']">Fecha de revisión es requerido.</div>
+                    <div *ngIf="_commonProductsService.dateRevisionControl.errors['invalidDate']">
+                        Fecha de Revisión es invalida
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex justify-center gap-8 my-8 md:my-16">
+            <custom-button>
+                <span class="px-4">Reiniciar</span>
+            </custom-button>
+            <custom-button (onClick)="onSubmit()" [customClass]="' bg-[#F5DF66] hover:bg-[#ECCD23] focus:ring-[#ECCD23]/50'">
+                <div class="flex items-center gap-2 px-4">
+                    <span> Enviar </span>
+                </div>
+            </custom-button>
+        </div>
+    </div>
+</div>

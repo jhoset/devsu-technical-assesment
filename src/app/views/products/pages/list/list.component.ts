@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductDto, ProductService} from "../../../../core/services/product.service";
 import {FormControl} from "@angular/forms";
+import {Router} from "@angular/router";
+import {CommonProductsService} from "../../services/common-products.service";
+import {CustomToastService} from "../../../../shared/services/custom-toast.service";
 
 interface TableColumn {
     name: string;
@@ -20,20 +23,39 @@ export class ListComponent implements OnInit {
 
     public limitFormControl: FormControl = new FormControl<number>(5);
 
-    constructor(private _productService: ProductService) {
+    constructor(private _productService: ProductService,
+                private _router: Router,
+                private _commonProductService: CommonProductsService,
+                private _customToastService: CustomToastService) {
     }
 
     ngOnInit() {
         this.loading = true;
         this._productService.getProducts().subscribe((result: ProductDto[]) => {
             if (result) {
-                this.data = result;
+                this.data = result.reverse();
                 this.filteredData = result;
                 this.filterByPaginationState(1)
             }
             this.loading = false;
-        })
+        });
+
     }
+
+
+    public goToEditProduct(product: ProductDto) {
+        this._commonProductService.productDto$.next(product);
+        this._router.navigate(['/products/edit'])
+    }
+
+    public goToAddProduct() {
+        this._router.navigate(['/products/edit'])
+    }
+
+    public onDeleteProduct(product: ProductDto) {
+
+    }
+
 
     public onSearch(text: string) {
         const searchText = text.trim().toLowerCase();

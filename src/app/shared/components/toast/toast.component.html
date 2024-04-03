@@ -1,0 +1,33 @@
+<div role="alertdialog"
+     (mouseenter)="stopCountDown()"
+     (mouseleave)="countDown()"
+     class="rounded-lg fixed z-50 top-[90px] right-0 min-w-[250px] max-w-[300px]
+        break-words  shadow-sm "
+     [ngClass]="{
+     'bg-[#C1ECBB] shadow-green-800': _customToastService.data && _customToastService.data.type === 'success',
+     'bg-[#ECBBBB] shadow-red-800': _customToastService.data && _customToastService.data.type === 'error',
+     }"
+
+     [@openClose]="_customToastService.data && _customToastService.data.show ? 'open' : 'closed'"
+>
+    <div class="relative text-sm py-4 px-6">
+        <div class="flex" *ngIf="_customToastService.data">
+            <div class="grid gap-2">
+                <h5 class="font-bold text-md">
+                    {{ _customToastService.data.title }}
+                </h5>
+                <div class="text-xs">
+                    {{ _customToastService.data.message }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mx-[3px] w-full bg-green-800 h-[3px] rounded-full transition-width duration-100 ease-out"
+         [ngClass]="{
+     'bg-green-800': _customToastService.data && _customToastService.data.type === 'success',
+     'bg-red-800': _customToastService.data && _customToastService.data.type === 'error',
+     }"
+         #element
+    ></div>
+</div>

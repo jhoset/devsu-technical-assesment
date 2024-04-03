@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 
-
 /*
 * Global Styles
 */
@@ -33,4 +32,19 @@ body {
   background-color: #3A3A3E;
   border-radius: 10px;
 }
+
+
+
+.custom-input {
+  @apply bg-[#FFFFFF] border border-gray-300 text-gray-900 text-sm rounded-lg
+  focus:ring-2 focus:ring-[#051B54]/20 block w-full p-2.5 outline-none mx-[0.5];
+}
+
+.is-invalid {
+  border-color: #EF4444;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.4);
+  }
+}
+
 
