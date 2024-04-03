@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 /*
 * Global Styles
@@ -10,6 +11,7 @@
 
 body {
   background-color: #F9FAFC;
+  font-family: "DM Sans", sans-serif;;
 }
 
 
