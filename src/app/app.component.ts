@@ -7,7 +7,6 @@ import {DialogService} from "./shared/services/dialog.service";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'bank-client';
   constructor(public _dialogService: DialogService) {
   }
 }

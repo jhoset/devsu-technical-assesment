@@ -54,7 +54,7 @@ export class ListComponent implements OnInit {
 
   public goToAddProduct() {
     this._commonProductService.case = 'CREATE';
-    this._router.navigate(['/products/edit'])
+    this._router.navigate(['/products/add'])
   }
 
   public onDeleteProduct(product: ProductDto) {
@@ -96,7 +96,7 @@ export class ListComponent implements OnInit {
     this.filterByPaginationState(1)
   }
 
-  private filterByPaginationState(currentPage: number) {
+  public filterByPaginationState(currentPage: number) {
     this.loading = true;
     const start: number = (currentPage - 1) * this.limitFormControl.value;
     const end: number = start + +(this.limitFormControl.value);

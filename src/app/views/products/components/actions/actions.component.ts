@@ -9,9 +9,6 @@ export class ActionsComponent {
     @Output() onEdit: EventEmitter<void> = new EventEmitter<void>()
     @Output() onDelete: EventEmitter<void> = new EventEmitter<void>()
 
-    constructor(private elementRef: ElementRef) {
-    }
-
     public isMenuOpen: boolean = false
 
     public onClose() {

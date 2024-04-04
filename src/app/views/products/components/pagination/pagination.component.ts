@@ -22,7 +22,7 @@ export class PaginationComponent implements OnChanges {
         }
     }
 
-    private updatePagination() {
+    public updatePagination() {
         this.currentPage = 1;
         this.totalPages = Math.ceil(this.total / this.limitFormControl.value);
     }
