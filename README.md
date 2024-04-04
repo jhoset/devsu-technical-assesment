@@ -1,6 +1,8 @@
 <h1> <p align="center"> 🌐 BANCO - WEB APPLICATION </p></h1> 
 
-<p align="center"> This is a web application for a banking system developed using Angular. It follows a scalable file structure, implements lazy loading, adheres to best practices, utilizes custom validators for reactive forms, custom components, and more. </p>
+<p align="center"> This is a web application to manage financial products developed using Angular, TailwindCSS, SASS & Jest for Testing. </p>
+  <p align="center"> It follows a scalable file structure, implements lazy loading, adheres to best practices, utilizes custom validators for reactive forms, custom components, and more. 
+  </p>
 
 <p align="center">
     <a href="https://angular.io/" target="_blank">
