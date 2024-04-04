@@ -42,5 +42,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 <h3> <p align="center"> 🤖 Current Coverage Achieved </p></h1> 
 
-![imagen](https://github.com/jhoset/devsu-technical-assesment/assets/29497145/7a5962f2-a35b-4c89-ade4-2c2d9b57078a)
+![imagen](https://github.com/jhoset/devsu-technical-assesment/assets/29497145/4b6e845c-5531-4a96-9211-9ef8ac1894a4)
+
 
