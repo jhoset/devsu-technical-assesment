@@ -17,10 +17,21 @@ export class DialogService {
   public showDialog: boolean = false;
   public data!: DialogData;
 
+
   public open(data: DialogData) {
     this.showDialog = true;
     this.data = data;
     this.display$.next(this.data);
     return this.dialogResponse$;
+  }
+
+  public close() {
+    this.showDialog = false;
+    this.dialogResponse$.next('cancel');
+  }
+
+  public confirm() {
+    this.showDialog = false;
+    this.dialogResponse$.next('ok');
   }
 }

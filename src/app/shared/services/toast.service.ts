@@ -17,16 +17,16 @@ export interface ToastData {
 })
 export class ToastService {
     public data!: ToastData;
-    public open$: Subject<ToastData> = new Subject<ToastData>()
+    public state$: Subject<ToastData> = new Subject<ToastData>()
 
     public display(data: ToastData) {
         this.data = { ...data, show: true, progressWidth: '100%' }
-        this.open$.next(this.data)
+        this.state$.next(this.data)
     }
 
     public hide() {
-        this.data = { ...this.data, show: false};
-        this.open$.next(this.data);
+        this.data = { ...this.data, progressWidth: '0%', show: false};
+        this.state$.next(this.data);
     }
 
 }

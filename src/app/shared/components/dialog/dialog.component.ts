@@ -27,12 +27,10 @@ export class DialogComponent implements OnDestroy, OnInit {
   }
 
   onCancel() {
-    this._dialogService.showDialog = false;
-    this._dialogService.dialogResponse$.next('cancel');
+    this._dialogService.close();
   }
 
   onConfirm() {
-    this._dialogService.showDialog = false;
-    this._dialogService.dialogResponse$.next('ok');
+    this._dialogService.confirm()
   }
 }

@@ -67,7 +67,6 @@ export class AddEditComponent implements OnInit {
     this._productService.updateProduct(this._commonProductsService.productDto$.value).subscribe(result => {
       if (result.id === this._commonProductsService.productDto$.value.id) {
         this._router.navigate(['/products']).then(rs => {
-          console.log('Aquii se rescibio')
           this._toastService.display({
             title: 'Success',
             message: 'Product updated successfully!',

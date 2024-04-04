@@ -14,10 +14,10 @@
     <footer>
       <hr class="my-2">
       <div class="flex justify-center gap-4 md:gap-8 py-4">
-        <custom-button (onClick)="onCancel()">
+        <custom-button aria-label="cancel" (onClick)="onCancel()">
           <span class="px-4">Cancelar</span>
         </custom-button>
-        <custom-button (onClick)="onConfirm()"
+        <custom-button aria-label="confirm" (onClick)="onConfirm()"
                        [customClass]="' bg-[#F5DF66] hover:bg-[#ECCD23] focus:ring-[#ECCD23]/50'">
           <div class="flex items-center gap-2 px-4">
             <span> Confirmar </span>

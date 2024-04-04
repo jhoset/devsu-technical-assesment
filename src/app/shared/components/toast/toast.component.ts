@@ -34,7 +34,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this._toastService.open$.subscribe((data) => {
+    this.subscription = this._toastService.state$.subscribe((data) => {
       if (data.show) {
         this.countDown();
       }
