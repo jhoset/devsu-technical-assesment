@@ -1,5 +1,6 @@
-<h1> <p align="center"> 🚀 BANCO - WEB APPLICATION </p></h1> 
+<h1> <p align="center"> 🌐 BANCO - WEB APPLICATION </p></h1> 
 
+<p align="center"> This is a web application for a banking system developed using Angular. It follows a scalable file structure, implements lazy loading, adheres to best practices, utilizes custom validators for reactive forms, custom components, and more. </p>
 
 <p align="center">
     <a href="https://angular.io/" target="_blank">
@@ -21,9 +22,12 @@
     </a>
 </p>
 
-## Development server
+## Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+The deployed version of this application can be accessed [here](https://devsu-techinal-assesment.vercel.app/). 
+
+## Development server
+To run the development server, use the following command: `ng serve`
 
 ## Build
 
