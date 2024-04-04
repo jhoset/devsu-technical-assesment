@@ -30,8 +30,6 @@ export class ListComponent implements OnInit {
               private _commonProductService: CommonProductsService,
               private _toastService: ToastService,
               private _dialogService: DialogService) {
-    this._commonProductService.case = 'CREATE';
-    this._commonProductService.resetProductDtoAndForm();
   }
 
   ngOnInit() {

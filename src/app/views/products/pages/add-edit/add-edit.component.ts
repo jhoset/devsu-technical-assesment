@@ -88,6 +88,10 @@ export class AddEditComponent implements OnInit {
     if (this._commonProductsService.case === 'UPDATE') {
       this._commonProductsService.idControl.disable()
       this._commonProductsService.syncFormGroup();
+    } else {
+      this._commonProductsService.idControl.enable();
+      this._commonProductsService.idControl.reset();
+      this._commonProductsService.resetProductDtoAndForm();
     }
   }
 
